@@ -1,0 +1,12 @@
+<aura:component >
+    <aura:attribute name="boat" type="Boat__c" />
+	<lightning:layoutItem flexibility="grow" size="3">
+    <lightning:button class="{! v.selected ? 'selected' : 'tile' }" onclick="{!c.onBoatClick}">
+        <div style="{!'background-image: url(\'' + v.boat.Picture__c + '\')'}" class="innertile">
+            <div class="lower-third">
+                <h1 class="slds-truncate">{!v.boat.Contact__r.Name}</h1>
+            </div>
+        </div>
+    </lightning:button>
+</lightning:layoutItem>
+</aura:component>

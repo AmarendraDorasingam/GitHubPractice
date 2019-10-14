@@ -1,0 +1,20 @@
+<aura:component controller="BoatSearchResults">
+    
+    <aura:handler name="init" action="{!c.doSearch}" value="{!this}"/>
+	<aura:attribute name="boats" type="Boat__c[]" />
+
+       <lightning:layout horizontalAlign="center" verticalAlign="center">
+            <lightning:layoutItem flexibility="grow"  class="slds-m-right_small" >   
+    			<aura:iteration items="{!v.boats}" var="boatVar">
+                	<c:BoatTile boat="{!boatVar}"/>
+                </aura:iteration>
+    		
+               
+                <aura:renderIf isTrue="{!v.boats.length==1}">
+                    <div style="margin-left: 50%;">
+                    <ui:outputText value="No boats found" />
+                        </div>
+                </aura:renderIf>
+     </lightning:layoutItem>
+    </lightning:layout>
+</aura:component>

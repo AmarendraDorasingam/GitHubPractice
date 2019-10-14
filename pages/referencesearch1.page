@@ -1,0 +1,71 @@
+<apex:page showHeader="true" sidebar="true">
+<apex:includeScript value="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" />
+<style>
+#test{background-color: green; color:red;}
+td{color:orange;}
+h3{color:red;}
+.x{color:pink;}
+#inputval{color:blue;}
+</style>
+<script language="JavaScript1.2" src="/js/functions.js"></script> 
+<script src="/soap/ajax/9.0/connection.js" type="text/javascript"></script> 
+     <h3>Reference Number: </h3><input id="inputval" type="text"  />
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $("#inputval").on('input',function(){
+            validateref();
+        });
+      });
+    function validateref()
+    {
+      var reference = $("#inputval").val();
+       if(reference.length==12 && /^\d+$/.test(reference) )
+       {
+          var  str1= "select id,Reference__c,Name,AccountNumber From Account Where Reference__c = '" ;
+          var Query = str1.concat(String(reference),"' LIMIT 1");
+          sforce.connection.sessionId = '{!$Api.Session_ID}'; 
+          var qr = sforce.connection.query(Query) ; 
+          var records = qr.records;          
+          var tr;
+          for(var i = 0; i < qr.size; i++)
+           {
+               tr = $('<tr />');
+               tr.append("<td>" + records.Reference__c + "</td>");
+               tr.append("<td>" + records.Name + "</td>");
+               tr.append("<td>" + records.AccountNumber + "</td>");
+               $("#test").append(tr);
+           }  
+          if(qr.size == 0) 
+          {
+           tr = $('<tr />');
+           tr.append("<td>" + String(reference)+" - Not Found value" + "</td>");
+           tr.append("<td> </td>");
+           tr.append("<td> </td>");
+           $("#test").append(tr);
+           /*var accounts = [];
+           var account = new sforce.SObject("Account");
+           account.Name = "my new account ";
+           account.reference__c=String(reference);
+           accounts.push(account);
+           var result = sforce.connection.create(accounts);
+           for (var i=0; i<result.length; i++) {
+          if (result[i].getBoolean("success")) {
+              alert("new account created with id " + result[i].id);
+          } else {
+          alert("failed to create account " + result[i]);
+            }
+          }*/
+
+           
+          }    
+       } 
+    }
+  </script>
+  <br/>
+  <br/>
+  <table border="1"  id="test">
+  <th> Reference Number</th>
+  <th>Name </th>
+  <th>AccountNumber</th>
+  </table>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page standardController="tfe_policy__c" extensions="policy">
+  <apex:form >
+  <apex:pageBlock >
+  <apex:pageMessages ></apex:pageMessages>
+  <apex:pageBlockButtons location="top" > <apex:commandButton value="Save" action="{!inser}"  />
+  </apex:pageBlockButtons>
+  <apex:pageblockSection title="Policy Information" collapsible="false">
+  <apex:inputField value="{!tfe_policy__c.name}"/>
+  </apex:pageblockSection>
+  <apex:pageBlockSection title="Policy Line Information" collapsible="false">
+    <apex:inputField value="{!policyline.name}"/>
+    <!-- <apex:outputField value="{!Policyline__c.PolicyType__c}"/>-->
+  </apex:pageBlockSection>
+  </apex:pageBlock>
+  </apex:form>
+</apex:page>

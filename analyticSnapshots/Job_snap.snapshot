@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AnalyticSnapshot xmlns="http://soap.sforce.com/2006/04/metadata">
+    <name>Job_snap</name>
+    <runningUser>amar01@gmail.com</runningUser>
+    <sourceReport>DB_Adoption/Active_Users</sourceReport>
+    <targetObject>tfe_policy__c</targetObject>
+</AnalyticSnapshot>

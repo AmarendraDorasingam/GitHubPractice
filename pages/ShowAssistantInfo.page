@@ -1,0 +1,7 @@
+<apex:page standardController="contact" recordSetVar="contacts">
+     <script src='/canvas/sdk/js/publisher.js'></script>
+    <apex:remoteObjects >
+        <apex:remoteObjectModel name="contact" fields="Id,Name"/>
+    </apex:remoteObjects>
+    
+</apex:page>

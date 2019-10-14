@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>amarendra.001@gmail.com</contactEmail>
+    <label>Mule</label>
+    <oauthConfig>
+        <callbackUrl>https://sureamar-dev-ed.my.salesforce.com</callbackUrl>
+        <consumerKey>3MVG9ZL0ppGP5UrBbyVkdZzagcrFXsR7TDvZGkZPEQmDd7b1nelp2cCCzuQKk7UZi2ttUSCTZFZA.7oyfVJVX</consumerKey>
+        <isAdminApproved>false</isAdminApproved>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+</ConnectedApp>

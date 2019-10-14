@@ -1,0 +1,17 @@
+<apex:page standardController="Job_Applicant__c" extensions="jobapplicant" >
+ <apex:form >
+  <apex:pageblock >
+    <apex:pageBlockButtons >
+      <apex:commandButton value="save" action="{!Save}"/>
+    </apex:pageBlockButtons>
+    <apex:pageblockSection title="Applicant Information">
+      <apex:inputField value="{!Job_Applicant__c.Name}"/>
+      <apex:inputField value="{!Job_Applicant__c.Account_Name__c}"/>
+      <apex:inputField value="{!Job_Applicant__c.City__c}"/>
+      <apex:inputField value="{!Job_Applicant__c.Job_title__c}"/>                  
+      <apex:inputField value="{!Job_Applicant__c.Job_No__c}"/>
+      <apex:inputField value="{!Job_Applicant__c.Stage__c}"/>
+    </apex:pageblockSection>
+  </apex:pageblock>
+ </apex:form>
+</apex:page>

@@ -1,0 +1,5 @@
+<apex:page >
+
+  <c:mycomponent record="Account" />
+
+</apex:page>

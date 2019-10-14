@@ -1,0 +1,3 @@
+<apex:page action="{!data}" controller="pageaction" >
+  <apex:outputText Value="{!s}"></apex:outputText>
+</apex:page>

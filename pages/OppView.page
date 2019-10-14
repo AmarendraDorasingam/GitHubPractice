@@ -1,0 +1,10 @@
+<apex:page standardcontroller="Opportunity">
+    <apex:pageblock title="opportunityinformation">
+    	<!--<apex:pageBlockTable value="{!Opportunity}" var="Opportunity">-->
+            <apex:outputField Value="{!Opportunity.Name}"/>
+        	<apex:outputField Value="{!Opportunity.Amount}"/>
+        	<apex:outputField Value="{!Opportunity.CloseDate}"/>
+        	<apex:outputField Value="{!Opportunity.Account.Name}"/>
+        <!--</apex:pageBlockTable>-->
+    </apex:pageblock>
+</apex:page>

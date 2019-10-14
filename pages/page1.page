@@ -1,0 +1,35 @@
+<apex:page standardController="Account" sidebar="false" >
+  <apex:sectionHeader title="Account Edit" subtitle="New Account"/>
+  <apex:form >
+    <apex:pageBlock title="Account Edit" >
+      <apex:pageBlockButtons location="both" >
+      <apex:commandButton value="Save" action="{!save}"/>
+      <apex:commandButton value="Save & New"/>
+      <apex:commandButton value="Cancel"/>
+      </apex:pageBlockButtons>
+      <apex:pageBlockSection title="Account Information" columns="3">
+        <apex:inputfield value="{!Account.Name}"/>
+        <apex:inputfield value="{!Account.Type}"/>
+        <apex:inputfield value="{!Account.SLAExpirationDate__c}"/>
+       
+      </apex:pageBlockSection>
+      <apex:pageBlockSection title="Address Information">
+        <apex:inputField value="{!Account.BillingStreet}"/>
+        <apex:inputField value="{!Account.ShippingStreet}"/>
+        <apex:inputField value="{!Account.BillingCity}"/>
+        <apex:inputField value="{!Account.ShippingCity}"/>
+        <apex:inputField value="{!Account.BillingState}"/>
+        <apex:inputField value="{!Account.ShippingState}"/>
+        <apex:inputField value="{!Account.BillingPostalcode}"/>
+        <apex:inputField value="{!Account.ShippingPostalCode}"/>
+        <apex:inputField value="{!Account.BillingCountry}"/>
+        <apex:inputField value="{!Account.ShippingCountry}"/>
+       
+      </apex:pageBlockSection>
+      <apex:pageBlockSection title="Description Information" columns="1">
+        <apex:inputField value="{!Account.Description}" style="width:400px;height:105px;"/>
+      </apex:pageBlockSection>
+    </apex:pageBlock>
+ 
+  </apex:form>
+</apex:page>

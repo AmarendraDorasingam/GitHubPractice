@@ -1,0 +1,29 @@
+<apex:page controller="jobdetails" >
+<apex:form >
+   <apex:pageblock >
+      <apex:pageblockSection title="Account Information" collapsible="false">
+        <apex:pageblockSectionitem >
+          Account Name: <apex:selectList id="acc" multiselect="false" size="1" value="{!acc_detail}" >
+            <apex:selectOptions value="{!accounts}"  />   
+            <apex:actionsupport event="onchange"  rerender="Job" status="status"/>            
+          </apex:selectList>
+        </apex:pageblockSectionitem> 
+       </apex:pageblockSection>
+    </apex:pageblock>
+    <apex:pageblock id="Job" rendered="{!jobsinfo<>null}">
+        <apex:outputpanel Title="Job Details">
+        <apex:pageBlockTable value="{!jobsinfo}" var="item"  >
+           <apex:column value="{!item.id}"/>
+           <apex:column value="{!item.name}"/>
+           <apex:column value="{!item.Account_Name__c}"/>
+           <apex:column >
+           <apex:commandlink value="Apply" action="{!apply}">
+             <apex:param value="{!item.id}" name="jobid" AssignTo="{!jobid}"/>
+           </apex:commandlink>
+           </apex:column>
+        </apex:pageBlockTable>      
+      </apex:outputpanel>   
+    </apex:pageblock>
+  </apex:form>
+
+</apex:page>

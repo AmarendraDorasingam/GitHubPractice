@@ -1,0 +1,12 @@
+<apex:page controller="Todaysplus5">
+{!now()}<br/>
+<apex:variable value="{!0}" var="temp"/>
+
+<apex:repeat value="{!businessday}" var="val">
+
+<apex:outputText value="{!val}" /><br/><br/>
+
+<apex:variable var="temp" value="{!(temp)+1}"/>
+
+</apex:repeat> 
+</apex:page>

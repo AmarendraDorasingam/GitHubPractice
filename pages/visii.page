@@ -1,0 +1,5 @@
+<apex:page controller="testii">
+<apex:form >
+  <apex:inputtext >{!value}</apex:inputtext>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,13 @@
+<apex:page >
+<head><title> Shell Window</title>
+<apex:includeScript value="{!$Resource.JQuery}"/>
+<apex:includeScript value="{!$Resource.ShellJs}"/>
+<script>
+</script>
+</head>
+
+
+<input type="button" value="signin" id="shellSignBtn"/>
+<input type="button" value="signup" id="shellSignupBtn"/>
+<div id="viewContainer"></div>
+</apex:page>

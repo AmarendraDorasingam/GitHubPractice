@@ -1,0 +1,26 @@
+<apex:page standardController="Account" extensions="Referencesearch" standardStylesheets="yes">
+  <script type="text/javascript">
+   function validateref(data)
+   {
+     var reference = document.getElementById('{!$Component.frm.inputval}').value;
+     if(reference.length==12 && /^\d+$/.test(reference))
+     fetchdetail();
+   }
+  </script>
+  <apex:form id="frm">
+    Reference Number:<t/> <apex:inputtext value="{!inputValue}" id="inputval" onchange="validateref()"/>
+    <br/>
+    <br/>
+        <apex:actionFunction action="{!fetch}" name="fetchdetail"  rerender="out"/>
+    <apex:pageBlock >
+      <apex:outputPanel id="out">
+       <apex:pageblockSection title="RTS Batch Scan" collapsible="false">      
+        <apex:pageBlockTable value="{!wrapper}" var="item" >
+           <apex:column value="{!item.Reference}" HeaderValue="Reference Number" />
+           <apex:column value="{!item.record.Name}" HeaderValue="Account Name"/>        
+        </apex:pageBlockTable>
+       </apex:pageblockSection>         
+      </apex:outputPanel>
+    </apex:pageBlock> 
+  </apex:form>
+</apex:page>

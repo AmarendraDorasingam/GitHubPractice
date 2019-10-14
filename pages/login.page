@@ -1,0 +1,16 @@
+<apex:page >
+
+    <legend> login View</legend>
+    <table>
+        <tr><td> Username </td>
+            <td> <input type="text"  id="UserNameTextBox"/></td>
+        </tr>
+        <tr><td> Password</td>
+            <td> <input type="password"  id="passwordTextBox"/></td>
+       </tr>
+       <tr><td> <input type="button"  id="Loginbutton" value="Login"/></td>
+           <td> <input type="Button"  id="Clear" Value="Clear"/></td>
+       </tr>
+      </table>
+
+</apex:page>

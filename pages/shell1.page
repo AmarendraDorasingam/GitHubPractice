@@ -1,0 +1,35 @@
+<apex:page >
+<head><title> Shell Window</title>
+<apex:includeScript value="{!$Resource.JQuery}"/>
+<apex:includeScript value="{!$Resource.ShellJs}"/>
+<script language="JavaScript1.2" src="/js/functions.js"></script> 
+<script src="/soap/ajax/9.0/connection.js" type="text/javascript"></script> 
+<script>
+$(document).ready(function(){
+  //Attach An event Handler - SignIN Button
+$("#shellSignBtn").click(function(){ 
+  var httpreq=new XMLHttpRequest();
+  httpReg.onreadystatechange=function(){
+  If(httpReq.readyState==4)
+ {
+    if(httpReq.Status==200)
+   {
+      var response = httpReq.responseText;
+     alert(response);
+    $("#viewcontainer").html(response);
+  }
+}
+
+};
+  http.open("GET","/apex/login",true);
+  httpReq.send();
+});
+
+});
+</script>
+</head>
+
+<input type="button" value="signin" id="shellSignBtn"/>
+<input type="button" value="signup" id="shellSignupBtn"/>
+<div id="viewContainer"></div>
+</apex:page>

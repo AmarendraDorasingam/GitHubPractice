@@ -1,0 +1,6 @@
+<apex:page action="{!testaction}" controller="pagecontroller">
+  <!-- Begin Default Content REMOVE THIS -->
+  <h1>{!s}</h1>
+
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

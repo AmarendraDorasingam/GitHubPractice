@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Workorder</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>workorders</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Cases__c</name>
+        <relationshipLabel><!-- workorders --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Service Appointments --></label>
+        <name>Serviceappointments__c</name>
+        <relationshipLabel><!-- workorders --></relationshipLabel>
+    </fields>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>
